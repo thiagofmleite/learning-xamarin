@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AluraNutricao.View.CadastroRefeicoes" Title="Cadastro de Refeição">
+	<ContentPage.Content>
+		<StackLayout Padding="25">
+			
+			<Label Text="Refeição" />
+			<Entry x:Name="entRefeicao" Placeholder="Ex: Filé de frango, salada, etc." Text="{Binding Descricao}" />
+
+			<StackLayout Orientation="Horizontal">
+				<Label Text="Quantidade:" />
+				<Label Text="{Binding Quantidade}" x:Name="lblQuantidade" />
+			</StackLayout>
+			<Stepper x:Name="stpQuantidade" Minimum="1" Value="{Binding Quantidade}" />
+			
+			<StackLayout Orientation="Horizontal">
+				<Label Text="Calorias: " />
+				<Label x:Name="lblCalorias" Text="{Binding Calorias, Mode=TwoWay}" />
+				</StackLayout>
+			<Slider x:Name="sldCalorias" Minimum="0" Maximum="1000" Value="{Binding Calorias, Mode=TwoWay}"  />
+
+			<Button Text="Adicionar Refeição" Command="{Binding SalvaRefeicao}" />
+
+		</StackLayout>
+	</ContentPage.Content>
+</ContentPage>
